@@ -1,4 +1,6 @@
 LearningLog::Application.routes.draw do
+  resources :logs
+
   resources :users
 
   # The priority is based upon order of creation:
