@@ -1,18 +1,19 @@
-<h1>Listing logs</h1>
+<h1 style="color:blue" >Listing logs</h1>
 
 <table>
   <tr>
     <th>Description</th>
-    <th>Text</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Created at</th>
+    <th>User</th>
+    <th colspan="3"></th>
+
   </tr>
 
 <% @logs.each do |log| %>
   <tr>
     <td><%= log.description %></td>
-    <td><%= log.text %></td>
+    <td><%= log.created_at %></td>
+    <td><%= log.user.name %></td>
     <td><%= link_to 'Show', log %></td>
     <td><%= link_to 'Edit', edit_log_path(log) %></td>
     <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>

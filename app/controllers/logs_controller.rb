@@ -44,8 +44,7 @@ class LogsController < ApplicationController
 
     @log = Log.new(params[:log])
     @log.user_id = params[:user_id]
-    puts params[:user_id] 
-
+    
     respond_to do |format|
       if @log.save
         format.html { redirect_to(@log, :notice => 'Log was successfully created.') }
