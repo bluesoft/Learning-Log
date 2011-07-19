@@ -13,7 +13,7 @@
   <tr>
     <td><%= log.description %></td>
     <td><%= log.created_at %></td>
-    <td><%= log.user.name %></td>
+ 	<td><%= log.user.email %></td>
     <td><%= link_to 'Show', log %></td>
     <td><%= link_to 'Edit', edit_log_path(log) %></td>
     <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -24,3 +24,5 @@
 <br />
 
 <%= link_to 'New Log', new_log_path %>
+
+

@@ -7,8 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<div>
+		<%= current_user.try(:email) =%>
+		&nbsp;
+		<%= link_to '(Exit)', "/users/sign_out" %>
+	</div>
 
-<%= yield %>
+ 	<%= yield %>
 
 </body>
 </html>

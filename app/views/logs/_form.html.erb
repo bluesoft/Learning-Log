@@ -11,13 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-	<select name="user_id">
-		<%= options_from_collection_for_select(@users, :id, :name) %>		
-	</select>
-  </div>	
-	
-  <div class="field">
+   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>

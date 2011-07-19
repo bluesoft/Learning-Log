@@ -7,6 +7,11 @@ gem 'capistrano'
 gem 'haml'
 gem "compass", ">= 0.11.3"
 
+#authentication
+gem 'devise', '1.4.2'  
+gem "omniauth"
+gem 'oa-openid', :require => 'omniauth/openid'
+
 group :development, :test do
   gem 'rspec-rails', '2.6.1'
   gem 'rspec-expectations'

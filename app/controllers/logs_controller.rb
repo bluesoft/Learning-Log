@@ -1,6 +1,6 @@
 class LogsController < ApplicationController
-  # GET /logs
-  # GET /logs.xml
+ before_filter :authenticate_user!
+ 
   def index
     @logs = Log.all
 
@@ -9,9 +9,7 @@ class LogsController < ApplicationController
       format.xml  { render :xml => @logs }
     end
   end
-
-  # GET /logs/1
-  # GET /logs/1.xml
+  
   def show
     @log = Log.find(params[:id])
 
@@ -21,8 +19,6 @@ class LogsController < ApplicationController
     end
   end
 
-  # GET /logs/new
-  # GET /logs/new.xml
   def new
     @log = Log.new
     @users = User.all
@@ -32,18 +28,16 @@ class LogsController < ApplicationController
     end
   end
 
-  # GET /logs/1/edit
+
   def edit
     @log = Log.find(params[:id])
     @users = User.all
   end
 
-  # POST /logs
-  # POST /logs.xml
   def create
 
     @log = Log.new(params[:log])
-    @log.user_id = params[:user_id]
+    @log.user_id = current_user.id
     
     respond_to do |format|
       if @log.save
@@ -56,11 +50,9 @@ class LogsController < ApplicationController
     end
   end
 
-  # PUT /logs/1
-  # PUT /logs/1.xml
   def update
     @log = Log.find(params[:id])
-    @log.user_id = params[:user_id]
+    @log.user_id = current_user.id
     
     respond_to do |format|
       if @log.update_attributes(params[:log])
@@ -73,8 +65,6 @@ class LogsController < ApplicationController
     end
   end
 
-  # DELETE /logs/1
-  # DELETE /logs/1.xml
   def destroy
     @log = Log.find(params[:id])
     @log.destroy

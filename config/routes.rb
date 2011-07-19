@@ -1,7 +1,14 @@
 LearningLog::Application.routes.draw do
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"} do
+     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+     get 'sign_out' => 'devise/sessions#destroy'
+     get '/users/sign_in' => 'devise/sessions#new'
+     get '/users/sign_up', :to => redirect('/users/auth/google_apps')
+   end
+
   resources :logs
 
-  resources :users
+  root :to => "home#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
