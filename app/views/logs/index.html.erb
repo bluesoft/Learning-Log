@@ -14,15 +14,15 @@
     <td><%= log.description %></td>
     <td><%= log.created_at %></td>
  	<td><%= log.user.email %></td>
-    <td><%= link_to 'Show', log %></td>
-    <td><%= link_to 'Edit', edit_log_path(log) %></td>
-    <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Visualizar', log, :class =>"button" %></td>
+    <td><%= link_to 'Editar', edit_log_path(log), :class =>"button" %></td>
+    <td><%= link_to 'Excluir', log, :confirm => 'Confirma exclusão?', :method => :delete, :class =>"button danger" %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Log', new_log_path %>
+<%= link_to 'Novo Log', new_log_path, :class =>"button primary" %>
 
 
