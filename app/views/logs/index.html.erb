@@ -1,19 +1,21 @@
-<h1 style="color:blue" >Listing logs</h1>
+<h1 style="color:blue" >Lista de Logs</h1>
 
 <table>
+
+<br />
+
   <tr>
-    <th>Description</th>
-    <th>Created at</th>
-    <th>User</th>
-    <th colspan="3"></th>
+	<th>Data</th>    
+	<th>Descrição</th>
+    <th colspan="2"></th>
 
   </tr>
 
 <% @logs.each do |log| %>
   <tr>
-    <td><%= log.description %></td>
-    <td><%= log.created_at %></td>
- 	<td><%= log.user.email %></td>
+	<td><%= log.created_at.to_formatted_s(:long) %></td>    
+	<td><%= log.description %></td>
+	
     <td><%= link_to 'Visualizar', log, :class =>"button" %></td>
     <td><%= link_to 'Editar', edit_log_path(log), :class =>"button" %></td>
     <td><%= link_to 'Excluir', log, :confirm => 'Confirma exclusão?', :method => :delete, :class =>"button danger" %></td>
@@ -24,5 +26,4 @@
 <br />
 
 <%= link_to 'Novo Log', new_log_path, :class =>"button primary" %>
-
 
