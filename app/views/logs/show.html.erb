@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>user:</b>
+  <b>usuário:</b>
   <%= @log.user.email %>
 </p>
 <p>
-  <b>Description:</b>
+  <b>Título:</b>
   <%= @log.description %>
 </p>
 
 <p>
-  <b>Text:</b>
+  <b>Descrição:</b>
   <%= @log.text %>
 </p>
 
-
-<%= link_to 'Edit', edit_log_path(@log) %> |
-<%= link_to 'Back', logs_path %>
+<table>
+  <tr>
+  	<td><%= link_to 'Voltar', logs_path, :class =>"button" %></td>
+  	<td><%= link_to 'Editar', edit_log_path(@log), :class =>"button" %></td>
+  </tr>
+</table>

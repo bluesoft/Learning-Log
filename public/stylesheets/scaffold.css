@@ -1,4 +1,4 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #fff; color: #333;}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -9,7 +9,7 @@ body, p, ol, ul, td {
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 21px;
 }
 
 a { color: #000; }
@@ -53,4 +53,25 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+tr{
+  border:1px solid #000; 
+  margin-bottom:4px;
+}
+
+tr.even{
+  background-color: #FFFFCC;
+
+}
+
+tr.odd{
+  background-color: #FFFFFF;
+}
+
+table thead{
+  background-color: #D0D0D0;
+}
+table {
+  border: 1px solid #D0D0D0;	
 }
