@@ -8,9 +8,13 @@
 </head>
 <body>
 	<div>
-		<%= current_user.try(:email) =%>
-		&nbsp;
-		<%= link_to '(Sair)', "/users/sign_out" %>
+		<%  if user_signed_in? %>
+			<%= image_tag current_user.gravatar_url %> 
+			<br/>
+			<%= current_user.try(:email) =%>
+			&nbsp;
+			<%= link_to '(Sair)', "/users/sign_out" %>
+		<%end%>	
 	</div>
 
  	<%= yield %>

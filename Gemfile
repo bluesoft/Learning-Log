@@ -6,6 +6,7 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'haml'
 gem "compass", ">= 0.11.3"
+gem "gravtastic", ">= 2.1.0"
 
 #authentication
 gem 'devise', '1.4.2'  
