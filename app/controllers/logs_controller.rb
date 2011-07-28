@@ -2,8 +2,8 @@ class LogsController < ApplicationController
  before_filter :authenticate_user!
  
   def index
-    @logs = Log.all
-
+    @logs = Log.find_all_by_user_id(current_user.id)
+  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @logs }
