@@ -1,9 +1,0 @@
-%div#notice 
-	= flash[:notice]
-
-%p
-	%b Name:
-	= @user.name 
-%br
-= link_to 'Edit', edit_user_path(@user) |
-= link_to 'Back', users_path
