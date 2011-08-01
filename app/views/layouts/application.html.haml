@@ -1,0 +1,19 @@
+%html
+  %head
+    %title LearningLog
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    %br/
+    %div
+      %img{:src => "images/logo-learning-log.png"}/
+    %br/
+    %div
+      - if user_signed_in?
+        = image_tag current_user.gravatar_url
+        %br/
+        = current_user.try(:email)
+        \ 
+        \#{link_to '(Sair)', "/users/sign_out"}
+    = yield

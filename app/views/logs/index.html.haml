@@ -1,0 +1,18 @@
+%h1{:style => "color:darkblue"} Lista de Logs
+%table
+  %br/
+  %thead
+    %tr
+      %th= t(:date)
+      %th= t(:description)
+      %th{:colspan => "3"}
+  %tbody
+    - @logs.each do |log|
+      <tr class=#{cycle('even', 'odd')}>
+      %td= log.created_at.to_formatted_s(:long)
+      %td= log.description
+      %td= link_to 'Visualizar', log, :class =>"button"
+      %td= link_to 'Editar', edit_log_path(log), :class =>"button"
+      %td= link_to 'Excluir', log, :confirm => 'Confirma exclusão?', :method => :delete, :class =>"button danger"
+%br/
+= link_to 'Novo Log', new_log_path, :class =>"button primary"

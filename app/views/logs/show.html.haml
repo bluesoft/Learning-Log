@@ -1,0 +1,14 @@
+%p#notice= notice
+%p
+  %b usuário:
+  = @log.user.email
+%p
+  %b Título:
+  = @log.description
+%p
+  %b Descrição:
+  = @log.text
+%table
+  %tr
+    %td= link_to 'Voltar', logs_path, :class =>"button"
+    %td= link_to 'Editar', edit_log_path(@log), :class =>"button"
