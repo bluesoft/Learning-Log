@@ -1,4 +1,8 @@
-guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test'}, :rspec_env => { 'RAILS_ENV' => 'test' } do
+# A sample Guardfile
+# More info at https://github.com/guard/guard#readme
+
+
+guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' }, :rspec => true do
   watch('config/application.rb')
   watch('config/environment.rb')
   watch(%r{^config/environments/.+\.rb$})
@@ -20,7 +24,7 @@ guard 'rspec', :version => 2, :cli => "--drb" do
   watch('spec/spec_helper.rb')                        { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
-
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
+

@@ -1,7 +1,9 @@
 fulano:
-  name: 'Ismael'
+  id: 1
+  email: ismael@ismaelsoares.com
 
 ciclano:
-  name: 'Douglas'    
+  id: 2    
+  email: dougals@bluesoft.com.br
 
      

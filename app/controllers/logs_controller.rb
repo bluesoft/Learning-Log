@@ -5,16 +5,16 @@ class LogsController < ApplicationController
     @logs = Log.find_all_by_user_id(current_user.id)
   
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.xml  { render :xml => @logs }
     end
-  end
+  end 
   
   def show
     @log = Log.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.xml  { render :xml => @log }
     end
   end
@@ -23,7 +23,7 @@ class LogsController < ApplicationController
     @log = Log.new
     @users = User.all
     respond_to do |format|
-      format.html # new.html.erb
+      format.html 
       format.xml  { render :xml => @log }
     end
   end

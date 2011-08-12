@@ -20,9 +20,7 @@ end
 
 group :test do  
   gem 'guard'
-  gem 'guard-spork'  
-  gem 'spork', '~> 0.9.0.rc'  
   gem 'rb-fsevent'
-  gem 'rcov'  
   gem 'growl'
+  gem 'guard-spork'
 end

@@ -31,7 +31,6 @@ LearningLog::Application.configure do
   # config.active_record.schema_format = :sql
 
   # Print deprecation notices to the stderr
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = :stderr 
   
-  config.i18n.default_locale = :pt_BR
 end

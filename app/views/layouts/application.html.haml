@@ -4,16 +4,21 @@
     = stylesheet_link_tag :all
     = javascript_include_tag :defaults
     = csrf_meta_tag
+    = stylesheet_link_tag 'application.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'		
+    /[if lt IE 8]
+      = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
   %body
-    %br/
-    %div
-      %img{:src => "images/logo-learning-log.png"}/
-    %br/
-    %div
+    %div#topo
+	
+    %div.span-24.last#home
       - if user_signed_in?
         = image_tag current_user.gravatar_url
         %br/
         = current_user.try(:email)
         \ 
         \#{link_to '(Sair)', "/users/sign_out"}
-    = yield
+      = yield
+
+    %div#rodape
